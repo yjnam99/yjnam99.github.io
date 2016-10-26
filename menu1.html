@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>menu1</title>
+<link href="css/page1.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic">
+<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/page1.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="js/main.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <a href="#" class="menu_btn">menu</a>
+            <nav>
+                <div class="hamburger_menu">
+                    <div class="logo">
+                        <a href="index.html">GUCCI</a>
+                    </div>
+                    <ul>
+                        <li><a href="menu1.html">menu1</a></li>
+                        <li><a href="menu2.html">menu2</a></li>
+                        <li><a href="#">menu3</a></li>
+                        <li><a href="#">menu4</a></li>
+                        <li><a href="#">menu5</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="overlay"></div>    
+    </div>
+
+	<div id="wrap">
+    	<ul>
+        	<li><img src="images/b7.gif"></li>
+            <li></li>
+            <li><img src="images/b5.gif"></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <div id="closeBtn">close</div>
+
+<script>
+		$(function(){//마우스 올렸을때 실행되는 함수
+			$("li").hover( //li안에 있는 이미지에 hover시 작동
+				function(){
+					$(this).find("img").css({display:"inline-block", left:"-200px", top:"-200px", height:"100%", opacity:0})//img에 대한 css 적용.
+					.stop()//다음동작은 멈춘다음
+					.animate({left:"0px", top:"0px", width:"100%", opacity:2}, 500);//원래이미지 크기로 .
+				},
+				function(){//마우스 내렸을때 실행
+					$(this).find("img").stop().fadeOut();//기존에 동작들을 없앤후 fadeOut으로 가려줌줌
+				}
+			);
+		});
+</script>
+</body>
+</html>
