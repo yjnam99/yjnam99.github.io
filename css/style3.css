@@ -1,0 +1,391 @@
+
+
+body{overflow: hidden; width:100%; height: 100%; background-image: url(../images/flower.png);}
+header > h1 {
+	display: block;
+	text-align: center;
+	margin-top: 5%;
+}
+#bigimg{
+    display: block;
+    margin-left:120px;
+    margin-top: 1%;
+}
+section > div#wrap {
+	margin-left: 25%;
+}
+section > div#box1{
+	width:100%;
+	height: 300px;
+	left:-100%;
+	background-color: #ef3d55;
+	position: absolute;
+	margin-left: -100px;
+	z-index: -99;
+	top:15%;
+}
+
+section > div#box1.active {
+	left: 120%;
+	transition:1s;
+}
+
+section > div#box2{
+	width:100%;
+	height: 300px;
+	right:-100%;
+	background-color: #ef3d55;
+	position: absolute;
+	margin-right: -100px;
+	z-index: -99;
+	top:45%;
+}
+
+section > div#box2.active {
+	right: 120%;
+	transition:1s;
+}
+
+section > div#box3{
+	width:300px;
+	height: 100%;
+	top:-1000px;
+	background-color: #00b7a3;
+	position: absolute;
+	margin-left: 500px;
+	z-index: -99;
+}
+
+section > div#box3.active {
+	margin-top: 2000px;
+	transition:1s;
+}
+
+section > div#box4{
+	width:300px;
+	height: 100%;
+	bottom:-1000px;
+	background-color: #00b7a3;
+	position: absolute;
+	margin-left: 800px;
+	z-index: -99;
+}
+
+section > div#box4.active {
+	margin-bottom: 2000px;
+	transition:1s;
+}
+
+section > div#box5{
+	width:0px;
+	height:0px;
+    top:200px; 
+	background-color: #db2531;
+	position: absolute;
+	margin-left: 750px;
+	z-index: -99;
+}
+
+section > div#box5.active {
+    width: 400px;
+    height: 400px;
+    left:0%;
+    transform: rotate(45deg);
+	transition: 1s;
+}
+
+section > div#box6{
+	position:absolute;
+    top:200px;
+    margin-left: 900px;
+    width: 0px;
+    height: 0px;
+    background-color: #db2531;
+    z-index: -99;
+}
+
+section > div#box6.active {
+    width: 400px;
+    height: 400px;
+    left:-30%;
+    transform: rotate(-45deg);
+	transition: 1s;
+
+}
+
+section > div#box7{
+	width:0px;
+	height: 0px;
+    left:-10%;
+	top: 0px;
+	background-color:  #ef3d55;
+	position: absolute;
+	margin-left: 900px;
+	z-index: -99;
+}
+
+section > div#box8{
+	width:100%;
+	height: 500px;
+	right:-100%;
+	background-color: #fff;
+	position: absolute;
+	margin-left: -100px;
+	z-index: -99;
+	top:15%;
+}
+
+section > div#box8.active {
+	right: 120%;
+	transition:2s;
+}
+
+section > div#box9{
+	width:100%;
+	height: 100%;
+	top:-1000px;
+	background-color: #231f20;
+	position: absolute;
+	z-index: -99;
+}
+
+section > div#box9.active {
+	margin-top: 2000px;
+	transition:1s;
+}
+
+section > div#box10{
+	width:350px;
+	height: 100%;
+	bottom:-1000px;
+	background-color: #f6f4b8;
+	position: absolute;
+	margin-left: 600px;
+	z-index: -99;
+}
+
+section > div#box10.active {
+	margin-bottom: 2000px;
+	transition:1s;
+}
+
+section > div#box11{
+	width:100%;
+	height:100%;
+	left:-100%;
+	background-color: #FFFFB4;
+	position: absolute;
+	margin-left: -100px;
+	z-index: -99;
+	top:0%;
+}
+
+section > div#box11.active {
+	left: 120%;
+	transition:1s;
+}
+
+
+
+section > div#wrap > div.gallery > a {
+    padding: 15px;
+    float: left;
+}
+
+section > div#wrap > div.gallery > a > div.img > div.bdT{
+    position:absolute;
+    top:0;
+    left:0;
+    width:0;
+    height:30px;
+    background-color:#265289;
+}
+section > div#wrap > div.gallery > a > div.img >  div.bdR{
+    position:absolute;
+    top:0;
+    right:0;
+    width:30px;
+    height:0px;
+    background-color:#265289;
+}
+section > div#wrap > div.gallery > a > div.img > div.bdB{
+    position:absolute;
+    bottom:0;
+    right:0;
+    width:0;
+    height:30px;
+    background-color:#265289;
+}
+section > div#wrap > div.gallery > a > div.img > div.bdL{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:30px;
+    height:0px;
+    background-color:#265289;
+}
+
+section > div#wrap > div.gallery > a > div.img2 > div.bdT2{
+    position:absolute;
+    top:0;
+    left:0;
+    width:0;
+    height:30px;
+    background-color:#f16680;
+}
+section > div#wrap > div.gallery > a > div.img2 >  div.bdR2{
+    position:absolute;
+    top:0;
+    right:0;
+    width:30px;
+    height:0px;
+    background-color:#f16680;
+}
+section > div#wrap > div.gallery > a > div.img2 > div.bdB2{
+    position:absolute;
+    bottom:0;
+    right:0;
+    width:0;
+    height:30px;
+    background-color:#f16680;
+}
+section > div#wrap > div.gallery > a > div.img2 > div.bdL2{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:30px;
+    height:0px;
+    background-color:#f16680;
+}
+
+section > div#wrap > div.gallery > a > div.img3 > div.bdT3{
+    position:absolute;
+    top:0;
+    left:0;
+    width:0;
+    height:30px;
+    background-color:#434345;
+}
+section > div#wrap > div.gallery > a > div.img3 >  div.bdR3{
+    position:absolute;
+    top:0;
+    right:0;
+    width:30px;
+    height:0px;
+    background-color:#434345;
+}
+section > div#wrap > div.gallery > a > div.img3 > div.bdB3{
+    position:absolute;
+    bottom:0;
+    right:0;
+    width:0;
+    height:30px;
+    background-color:#434345;
+}
+section > div#wrap > div.gallery > a > div.img3 > div.bdL3{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:30px;
+    height:0px;
+    background-color:#434345;
+}
+
+section > div#wrap > div.gallery > a > div.img4 > div.bdT4{
+    position:absolute;
+    top:0;
+    left:0;
+    width:0;
+    height:30px;
+    background-color: #ef3d55;
+}
+section > div#wrap > div.gallery > a > div.img4 >  div.bdR4{
+    position:absolute;
+    top:0;
+    right:0;
+    width:30px;
+    height:0px;
+    background-color: #ef3d55;
+}
+section > div#wrap > div.gallery > a > div.img4 > div.bdB4{
+    position:absolute;
+    bottom:0;
+    right:0;
+    width:0;
+    height:30px;
+    background-color: #ef3d55;
+}
+section > div#wrap > div.gallery > a > div.img4 > div.bdL4{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:30px;
+    height:0px;
+    background-color: #ef3d55;
+}
+
+section > div#wrap > div.gallery > a > div.img5 > div.bdT5{
+    position:absolute;
+    top:0;
+    left:0;
+    width:0;
+    height:30px;
+    background-color:#f6f4b8;
+}
+section > div#wrap > div.gallery > a > div.img5 >  div.bdR5{
+    position:absolute;
+    top:0;
+    right:0;
+    width:30px;
+    height:0px;
+    background-color:#f6f4b8;
+}
+section > div#wrap > div.gallery > a > div.img5 > div.bdB5{
+    position:absolute;
+    bottom:0;
+    right:0;
+    width:0;
+    height:30px;
+    background-color: #f6f4b8;
+}
+section > div#wrap > div.gallery > a > div.img5 > div.bdL5{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:30px;
+    height:0px;
+    background-color: #f6f4b8;
+}
+
+section > div#wrap > div.gallery > a > div.img6 > div.bdT6{
+    position:absolute;
+    top:0;
+    left:0;
+    width:0;
+    height:30px;
+    background-color:#1cb378;
+}
+section > div#wrap > div.gallery > a > div.img6 >  div.bdR6{
+    position:absolute;
+    top:0;
+    right:0;
+    width:30px;
+    height:0px;
+    background-color:#1cb378;
+}
+section > div#wrap > div.gallery > a > div.img6 > div.bdB6{
+    position:absolute;
+    bottom:0;
+    right:0;
+    width:0;
+    height:30px;
+    background-color:#1cb378;
+}
+section > div#wrap > div.gallery > a > div.img6 > div.bdL6{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:30px;
+    height:0px;
+    background-color:#1cb378;
+}

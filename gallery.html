@@ -1,0 +1,328 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>GUCCI 2016 CRUISE : THE GARDEN</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="css/style3.css"/>
+<script src="js/jquery-1.7.2.min.js"></script>
+</head>
+
+<body>
+<header>
+	<h1>GUCCI 2016 CRUISE : THE GARDEN</h1>
+</header>	
+<section>
+	<div id="wrap">
+		<div id="bigimg"><img src="images/big1.png" alt="" /></div>
+		<div class="gallery">
+			<a href="images/big1.png" title="img1">
+                <div class="img">
+                    <img src="images/small1.png" alt="" class="img"/>
+                    <div class="bdT"></div>
+                    <div class="bdR"></div>
+                    <div class="bdB"></div>
+                    <div class="bdL"></div>
+                </div>
+            </a>
+			<a href="images/big2.png" title="img2">
+                <div class="img2">
+                    <img src="images/small2.png" alt="" class="img2"/>
+                    <div class="bdT2"></div>
+                    <div class="bdR2"></div>
+                    <div class="bdB2"></div>
+                    <div class="bdL2"></div>
+                </div>
+            </a>
+			<a href="images/big3.png" title="img3">
+                <div class="img3">
+                    <img src="images/small3.png" alt="" class="img3"/>
+                    <div class="bdT3"></div>
+                    <div class="bdR3"></div>
+                    <div class="bdB3"></div>
+                    <div class="bdL3"></div>
+                </div>
+            </a>
+	        <a href="images/big4.png" title="img4">
+                <div class="img4">
+                    <img src="images/small4.png" alt="" class="img4"/>
+                    <div class="bdT4"></div>
+                    <div class="bdR4"></div>
+                    <div class="bdB4"></div>
+                    <div class="bdL4"></div>
+                </div>
+            </a>
+	        <a href="images/big5.png" title="img5">
+                <div class="img5">
+                    <img src="images/small5.png" alt="" class="img5"/>
+                    <div class="bdT5"></div>
+                    <div class="bdR5"></div>
+                    <div class="bdB5"></div>
+                    <div class="bdL5"></div>
+                </div>
+            </a>
+	        <a href="images/big6.png" title="img6">
+                <div class="img6">
+                    <img src="images/small6.png" alt="" class="img6"/>
+                    <div class="bdT6"></div>
+                    <div class="bdR6"></div>
+                    <div class="bdB6"></div>
+                    <div class="bdL6"></div>
+                </div>
+            </a>
+		</div>
+	</div>
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+	<div id="box4"></div>
+    <div id="box5"></div>
+    <div id="box6"></div>
+    <div id="box7"></div>
+    <div id="box8"></div>
+    <div id="box9"></div>
+    <div id="box10"></div>
+    <div id="box11"></div>
+</section>
+
+
+
+
+
+<script>
+var current=1; // 현재 이미지 순서에 해당하는 변수를 지정
+var $galleryA=$("div.gallery a");
+
+
+$galleryA.eq(current-1).find("img").addClass("on");//eq = 동작시킬 선택된 요소들을 인덱스 번호로 찾음.
+
+var interval; // 동작에 따른 인터벌 움직임을 만들 변수 지정
+interval=setInterval("interMove()", 2000);
+// setTimeout("함수", 시간); 1번 실행
+// setInterval("함수", 시간); 정해진 시간마다 실행, clearInterval(interval);
+
+function interMove(){ // 일반 함수
+	if(current < 6){ // 1, 2, 3,4,5,6 , 1, 2, 3, ...
+		current=current+1;
+	}else{
+		current=1;
+	}
+	// console.log("current : "+current);
+
+	$galleryA.find("img").each(function(){
+		if($(this).hasClass("on")){ //hasClass on클래스가 있는 지 확인
+				$(this).removeClass("on");
+		}
+	});
+	$galleryA.eq(current-1).find("img").addClass("on");
+
+	var path="images/big"+current+".png";
+	// console.log("path : "+path);
+
+	// $("#bigimg img").attr("src", path)
+	// .css({opacity:0})
+	// .stop()
+	// .animate({opacity:1}, 500);
+	effectImg($("#bigimg img"), path);
+}
+function effectImg(img, path){
+	img.attr("src", path).css({opacity:0}).stop().animate({opacity:1}, 500);
+	return false;
+}
+
+
+$galleryA.hover(
+	function(){
+		clearInterval(interval);
+	},
+	function(){
+		interval=setInterval("interMove()", 4000);
+	}
+);
+
+
+$galleryA.click(function(e){
+	e.preventDefault();//현재 이벤트의 기본 동작 중지(a태그의 기본 동작을 제한함)
+	$galleryA.find("img").each(function(){
+		if($(this).hasClass("on")){
+			$(this).removeClass("on");
+		}
+	});
+	$(this).find("img").addClass("on"); //this="div.gallery a" 에서 img 찾아서 클릭시 on클래스 추가
+
+	current=$(this).index();
+	current=current+1;
+	var path=$galleryA.eq(current-1).attr("href");//현재 클릭된 요소의 경로 지정
+	effectImg($("#bigimg img"), path);
+});
+
+
+  //background 동작.
+
+  $galleryA.eq(0).find("img").click(function(){
+        $("#box1").addClass('active');
+    	setTimeout(function () {
+    		$("#box1").removeClass('active');//초기화 과정
+    	},1000);
+
+    	$("#box2").addClass('active');
+    	setTimeout(function () {
+    		$("#box2").removeClass('active');
+    	},1000);
+    });
+
+ $galleryA.eq(1).find("img").click(function(){
+        $("#box3").addClass('active');
+    	setTimeout(function () {
+    		$("#box3").removeClass('active');//초기화 과정
+    	},1000);
+     
+        $("#box4").addClass('active');
+    	setTimeout(function () {
+    		$("#box4").removeClass('active');
+    	},1000);
+    });
+    
+$galleryA.eq(2).find("img").click(function(){
+        $("#box5").addClass('active');
+    	setTimeout(function () {
+    		$("#box5").removeClass('active');//초기화 과정
+    	},1000);
+     
+        $("#box6").addClass('active');
+    	setTimeout(function () {
+    		$("#box6").removeClass('active');
+    	},1000);
+    });
+    
+$galleryA.eq(3).find("img").click(function(){
+         $("#box7").animate({height: '1000px'}, "fast");
+         $("#box7").animate({width: '100%'}, "fast");
+         $("#box7").animate({right:'-800px', opacity: '0.4'}, "slow");
+         $("#box7").animate({width: '0px', opacity: '0.8'}, "slow");
+    
+         $("#box8").addClass('active');
+    	setTimeout(function () {
+    		$("#box8").removeClass('active');//초기화 과정
+    	},1000);
+    });
+
+ $galleryA.eq(4).find("img").click(function(){
+        $("#box9").addClass('active');
+    	setTimeout(function () {
+    		$("#box9").removeClass('active');//초기화 과정
+    	},1000);
+     
+        $("#box10").addClass('active');
+    	setTimeout(function () {
+    		$("#box10").removeClass('active');
+    	},1000);
+     
+    });   
+    
+ $galleryA.eq(5).find("img").click(function(){
+        $("#box11").addClass('active');
+    	setTimeout(function () {
+    		$("#box11").removeClass('active');//초기화 과정
+    	},1000);
+    });  
+
+    
+$galleryA.eq(0).mouseenter(function(){
+		$('.bdT').css({width:"100%", transition:"width .2s linear .3s"});
+		$('.bdR').css({height:"100%", transition:"height .3s linear 0s"});
+		$('.bdB').css({width:"100%", transition:"width .2s linear .3s"});
+		$('.bdL').css({height:"100%", transition:"height .3s linear 0s"});
+        
+    }); 
+    
+$galleryA.eq(0).mouseleave(function(){
+		$('.bdT').css({width:"0", transition:"width 0s linear 0s"});
+		$('.bdR').css({height:"0", transition:"height 0s linear 0s"});
+		$('.bdB').css({width:"0", transition:"width 0s linear 0s"});
+		$('.bdL').css({height:"0", transition:"height 0s linear 0s"});
+    
+    }); 
+    
+$galleryA.eq(1).mouseenter(function(){
+		$('.bdT2').css({width:"100%", transition:"width .2s linear .3s"});
+		$('.bdR2').css({height:"100%", transition:"height .3s linear 0s"});
+		$('.bdB2').css({width:"100%", transition:"width .2s linear .3s"});
+		$('.bdL2').css({height:"100%", transition:"height .3s linear 0s"});
+        
+    }); 
+    
+$galleryA.eq(1).mouseleave(function(){
+		$('.bdT2').css({width:"0", transition:"width 0s linear 0s"});
+		$('.bdR2').css({height:"0", transition:"height 0s linear 0s"});
+		$('.bdB2').css({width:"0", transition:"width 0s linear 0s"});
+		$('.bdL2').css({height:"0", transition:"height 0s linear 0s"});
+    
+    }); 
+
+$galleryA.eq(2).mouseenter(function(){
+		$('.bdT3').css({width:"100%", transition:"width .2s linear .3s"});
+		$('.bdR3').css({height:"100%", transition:"height .3s linear 0s"});
+		$('.bdB3').css({width:"100%", transition:"width .2s linear .3s"});
+		$('.bdL3').css({height:"100%", transition:"height .3s linear 0s"});
+        
+    }); 
+    
+$galleryA.eq(2).mouseleave(function(){
+		$('.bdT3').css({width:"0", transition:"width 0s linear 0s"});
+		$('.bdR3').css({height:"0", transition:"height 0s linear 0s"});
+		$('.bdB3').css({width:"0", transition:"width 0s linear 0s"});
+		$('.bdL3').css({height:"0", transition:"height 0s linear 0s"});
+    
+    }); 
+    
+$galleryA.eq(3).mouseenter(function(){
+		$('.bdT4').css({width:"100%", transition:"width .2s linear .3s"});
+		$('.bdR4').css({height:"100%", transition:"height .3s linear 0s"});
+		$('.bdB4').css({width:"100%", transition:"width .2s linear .3s"});
+		$('.bdL4').css({height:"100%", transition:"height .3s linear 0s"});
+        
+    }); 
+    
+$galleryA.eq(3).mouseleave(function(){
+		$('.bdT4').css({width:"0", transition:"width 0s linear 0s"});
+		$('.bdR4').css({height:"0", transition:"height 0s linear 0s"});
+		$('.bdB4').css({width:"0", transition:"width 0s linear 0s"});
+		$('.bdL4').css({height:"0", transition:"height 0s linear 0s"});
+    
+    });
+    
+$galleryA.eq(4).mouseenter(function(){
+		$('.bdT5').css({width:"100%", transition:"width .2s linear .3s"});
+		$('.bdR5').css({height:"100%", transition:"height .3s linear 0s"});
+		$('.bdB5').css({width:"100%", transition:"width .2s linear .3s"});
+		$('.bdL5').css({height:"100%", transition:"height .3s linear 0s"});
+        
+    }); 
+    
+$galleryA.eq(4).mouseleave(function(){
+		$('.bdT5').css({width:"0", transition:"width 0s linear 0s"});
+		$('.bdR5').css({height:"0", transition:"height 0s linear 0s"});
+		$('.bdB5').css({width:"0", transition:"width 0s linear 0s"});
+		$('.bdL5').css({height:"0", transition:"height 0s linear 0s"});
+    
+    });
+    
+$galleryA.eq(5).mouseenter(function(){
+		$('.bdT6').css({width:"100%", transition:"width .2s linear .3s"});
+		$('.bdR6').css({height:"100%", transition:"height .3s linear 0s"});
+		$('.bdB6').css({width:"100%", transition:"width .2s linear .3s"});
+		$('.bdL6').css({height:"100%", transition:"height .3s linear 0s"});
+        
+    }); 
+    
+$galleryA.eq(5).mouseleave(function(){
+		$('.bdT6').css({width:"0", transition:"width 0s linear 0s"});
+		$('.bdR6').css({height:"0", transition:"height 0s linear 0s"});
+		$('.bdB6').css({width:"0", transition:"width 0s linear 0s"});
+		$('.bdL6').css({height:"0", transition:"height 0s linear 0s"});
+    
+    });
+</script>
+</body>
+</html>
